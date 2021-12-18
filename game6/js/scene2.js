@@ -1,6 +1,6 @@
 var blazewarriorsstatusgame = false;
 var music;
-var list = ["hoa con ngai ngu", "ong da den roi", "day mau di chu", "kia ong mat troi"];
+var list = ["hoa␣con ngai ngu", "ong da den roi", "day mau di chu", "kia ong mat troi"];
 var index = 0
 var word;
 var right;
@@ -57,8 +57,9 @@ class scene2 extends Phaser.Scene{
 
 		const keydownHandler = (e) => {
 			if (e.key === "Backspace") {
-				this.typedMessage = this.typedMessage.substr(0, this.typedMessage.length - 1)
+				this.typedMessage = this.typedMessage.substr(0, this.typedMessage.length - 1);
 			}
+			
 		}
 
 
