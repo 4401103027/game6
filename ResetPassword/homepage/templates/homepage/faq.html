@@ -1,0 +1,73 @@
+{% extends "homepage/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="content-wrapper">
+
+    <div class="breadcrumb-wrap bg-f br-bg-1">
+        <div class="overlay op-8 bg-white"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-md-10 offset-md-1">
+                    <div class="breadcrumb-title">
+                        <h2>Các câu hỏi thường gặp</h2>
+                        <!-- <ul class="breadcrumb-menu list-style">
+                            <li><a href="{% url 'homepage:index' %}">Trang chủ </a></li>
+                            <li>Faq</li>
+                        </ul> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="faq-wrapper ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+                            <div class="section-title style1 mb-40 text-center">
+                                <h2>Các câu hỏi thường gặp</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+                    <div class="faq-content">
+                        {% csrf_token %}
+                        {% for question in questions %}
+                        <div class="faq-item">
+                            <h5 onclick="myFunction('{{question.pk}}')">{{question.question}}</h5>
+                            <p id="{{question.pk}}" class="hide">{{question.answer}} </p>
+                        </div>
+                        {% endfor %}
+                        <!-- <p>Nguồn tham khảo: https://www.typingstudy.com</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myFunction(id) {
+            console.log(id)
+          var x = document.getElementById(id);
+          if (x.className.indexOf("show") == -1) {
+            x.className += "show";
+            // x.previousElementSibling.className = 
+            // x.previousElementSibling.className.replace("w3-black", "w3-red");
+          } else { 
+            x.className = x.className.replace("show", "");
+            // x.previousElementSibling.className = 
+            // x.previousElementSibling.className.replace("w3-red", "w3-black");
+          }
+        }
+    </script>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends "homepage/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="content-wrapper">
+
+    <div class="breadcrumb-wrap bg-f br-bg-1">
+        <div class="overlay op-8 bg-white"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-md-10 offset-md-1">
+                    <div class="breadcrumb-title">
+                        <h2>Liên Hệ Với Chúng Tôi</h2>
+                        <!-- <ul class="breadcrumb-menu list-style">
+                            <li><a href="index.html">Home </a></li>
+                            <li>Contact Us</li>
+                        </ul> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="contact-wrap pt-100 pb-100 bg-selago">
+        <div class="container" align="center">
+            <div class="row justify-content-md-center pb-75">
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-address">
+                        <div class="contact-icon">
+                            <i class="flaticon-maps-and-flags"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h5>Địa Chỉ</h5>
+                            <p class="mb-0">280 An Dương Vương, Phường 4, Quận 5, TP.HCM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-address">
+                        <div class="contact-icon">
+                            <i class="flaticon-phone-call"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h5>Số Điện Thoại</h5>
+                            <p class="mb-0"><a href="tel:99762236473">028 3835 2020</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-address">
+                        <div class="contact-icon">
+                            <i class="flaticon-mail"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h5>Email</h5>
+                            <p class="mb-0"><a
+                                    href="https://templates.envytheme.com/cdn-cgi/l/email-protection#cba2a5ada48baeafbea7aebfe5a8a4a6"><span
+                                        class="__cf_email__"
+                                        data-cfemail="10797e767f507574657c75643e737f7d">smarttyping@gmail.com</span></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="company-location ">
+                <div class="comp-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6506655785206!2d106.67998241462236!3d10.761383192331733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b8a072901%3A0x2fb4502ebd044212!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBTxrAgcGjhuqFtIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaA!5e0!3m2!1svi!2s!4v1637004769406!5m2!1svi!2s"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="contact-form_wrap mt-100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title text-center mb-40 style1">
+                                <span class="text-danger">LIÊN HỆ</span>
+                                <h2>Để lại lời nhắn cho chúng mình nhé!</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="contact-form">
+                                <form class="form-wrap"
+                                    action="https://templates.envytheme.com/edulet/default/php/form-process.php"
+                                    method="post" id="contact_form">
+                                    <div id="message" class="alert alert-danger alert-dismissible fade"></div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <input id="name" name="name" type="text" placeholder="Họ Tên*" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <input id="email" name="email" type="email" placeholder="Email*"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <input id="phone" name="phone" type="number"
+                                                    placeholder="Số Điện Thoại">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <input type="text" id="subj" name="subj" placeholder="Chủ Đề">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group v1">
+                                                <textarea name="comment" id="comment" cols="30" rows="10"
+                                                    placeholder="Nội dung.."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <button href="#" class="btn style7 d-block w-100">GỬI ĐI</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}

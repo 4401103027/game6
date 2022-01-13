@@ -1,0 +1,139 @@
+{% extends "homepage/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="content-wrapper">
+
+    <div class="breadcrumb-wrap bg-f br-bg-4">
+        <div class="overlay op-2 bg-white"></div>
+        <!-- <div class="container">
+            <div class="row">
+                <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-md-10 offset-md-1">
+                    <div class="breadcrumb-title">
+                        <h2>Instructor Profile</h2>
+                        <ul class="breadcrumb-menu list-style">
+                            <li><a href="index.html">Home </a></li>
+                            <li><a href="instructors.html">Instructors </a></li>
+                            <li>Instructor Profile</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <section class="instructor-details-wrap ptb-100 bg-selago">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 offset-lg-0 col-md-8 offset-md-2">
+                    <div class="instructor-img">
+                        <img src="{{account.avatar}}" alt="Image">
+                        <!-- <img class="user-img" src="{{account.avatar}}" alt="Image"> -->
+
+                        <form class="login-form" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                        <div class="file-upload-wrapper" data-text="Chọn ảnh đại diện">
+                            <input id="avatar" name="avatar" type="file" class="file-upload-field" value="" accept=".jpg,.png" required="required">
+                        </div>
+
+                        <a href="{% url 'homepage:dashboard' user.pk %}"><button>Đổi ảnh</button></a>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12">
+                    <ul class="nav nav-tabs course-tablist style2" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab_1" type="button"
+                                role="tab">Thông tin cá nhân</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link " data-bs-toggle="tab" data-bs-target="#tab_2" type="button"
+                                role="tab">Kỹ năng</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab_3" type="button"
+                                role="tab">Thành tựu</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content insructor-tab-content">
+                        <div class="tab-pane fade show active" id="tab_1" role="tabpanel">
+                            <h3 class="instructor-title">
+                                {{userdetail.lastname}} {{userdetail.firstname}}
+                            </h3>
+                            <span>Cấp bậc: {{account.callsignid}}</span>
+                            <p>Kinh nghiệm: {{account.experience}}</p>
+                            <p>Năm sinh: {{userdetail.yearofbirth}}</p>
+                            <p>Đối tượng: {{userdetail.objectchoice}}</p>
+                            <p>Cấp lớp: {{userdetail.gradelevel}}</p>
+                            <p>Họ tên người giám hộ: {{userdetail.guardian}}</p>
+                            <p>Email: {{userdetail.email}}</p>
+                            <p>Số điện thoại: {{userdetail.phone}}</p>
+                            <p></p>
+                            <a href="{% url 'homepage:updateinfo' %}"><button>Cập nhật thông tin</button></a>
+                        </div>
+                        <div class="tab-pane fade" id="tab_2" role="tabpanel">
+                            <h3 class="instructor-title">
+                                Professional Skills
+                            </h3>
+                            <div class="skills style1">
+                                <p>Communicative Speaking</p>
+                                <div class="skillbar clearfix " data-percent="89%">
+                                    <div class="skillbar-bar"></div>
+                                </div>
+                            </div>
+                            <div class="skills style1">
+                                <p>Computer Application</p>
+                                <div class="skillbar clearfix " data-percent="79%">
+                                    <div class="skillbar-bar"></div>
+                                </div>
+                            </div>
+                            <div class="skills style1">
+                                <p>Interective Mathematics</p>
+                                <div class="skillbar clearfix " data-percent="85%">
+                                    <div class="skillbar-bar"></div>
+                                </div>
+                            </div>
+                            <h3 class="instructor-title mt-3">
+                                Experience
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam vel sapiente aliquid
+                                velit animi dolores iusto rem provident nihil consequatur?</p>
+                        </div>
+                        <div class="tab-pane fade" id="tab_3" role="tabpanel">
+                            <h3 class="instructor-title">
+                                Quick Contact
+                            </h3>
+                            <ul class="footer-contact-address list-style">
+                                <li><a href="tel:333435238769"> <i class="flaticon-call"></i> +333 435 23 8769</a></li>
+                                <li> <i class="flaticon-mail"></i> <a
+                                        href="https://templates.envytheme.com/cdn-cgi/l/email-protection#e38b868f8f8c8e8a808b868f86a3848e828a8fcd808c8e"><span
+                                            class="__cf_email__"
+                                            data-cfemail="7e161b121211190b120d11103e19131f1712501d1113">[email&#160;protected]</span></a>
+                                </li>
+                                <li> <i class="flaticon-pin"></i>
+                                    <p>124 lakedown Street, Holnlu City, Florida, USA</p>
+                                </li>
+                            </ul>
+                            <ul class="social-profile style3 list-style mt-25">
+                                <li><a target="_blank" href="https://facebook.com/"><i class="lab la-facebook-f"></i>
+                                    </a></li>
+                                <li><a target="_blank" href="https://linkedin.com/"> <i class="lab la-linkedin-in"></i>
+                                    </a></li>
+                                <li><a target="_blank" href="https://twitter.com/"> <i class="lab la-twitter"></i> </a>
+                                </li>
+                                <li><a target="_blank" href="https://instagram.com/"> <i class="lab la-instagram"></i>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}
