@@ -1,0 +1,57 @@
+{% extends "homepage/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="content-wrapper" style="background-image: url(../../static/img/competition/background.png);">
+
+    <div class="breadcrumb-wrap bg-f br-bg-4">
+        <div class="overlay op-8 bg-white"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-md-10 offset-md-1">
+                    <div class="breadcrumb-title">
+                        <h2>Tranh tài cùng Ong Vàng</h2>
+                        <ul class="breadcrumb-menu list-style">
+                            <li><a href="{% url 'homepage:index' %}">Trang chủ </a></li>
+                            <li>Cuộc thi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="event-wrap ptb-100">
+        <div class="container">
+            {% csrf_token %}
+            <div class="row justify-content-center">
+                {% for competition in competitions %}
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="event-card">
+                        <div class="event-img">
+                            <img src="https://vẽ.vn/wp-content/uploads/2020/04/L%C3%A0m-th%E1%BA%BF-n%C3%A0o-%C4%91%E1%BB%83-v%E1%BA%BD-m%E1%BB%99t-con-ong-ho%E1%BA%A1t-h%C3%ACnh.png" alt="Image">
+                        </div>
+                        <div class="event-info">
+                            <h2 class="text-danger"><i class="far fa-keyboard"></i> {{competition.name}}</h2>
+
+                        </div>
+                        <div class="event-venue">
+                            <span>Thời gian diễn ra:</span>
+                            <p>{{competition.startdate}} - {{competition.enddate}}</p>
+                        </div>
+                        <a href="event-details.html" class="link style1">Tham gia ngay!<i class="las la-plus"></i></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+</div>
+</div>
+
+</div>
+</section>
+</div>
+
+{% endblock %}
